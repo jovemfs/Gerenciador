@@ -17,8 +17,8 @@ CREATE TABLE IF NOT EXISTS users (
 # criacao senhas.db, arquivo binario
 
 def menu():
-    print('''                      
-           ^jEQBQDj^             
+    print('-=' * 15)
+    print('''           ^jEQBQDj^             
           #@@@@@@@@@#           
         ?@@@#x_`_v#@@@x          
         g@@@!     !@@@Q          
