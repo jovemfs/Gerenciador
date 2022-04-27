@@ -29,7 +29,7 @@ def menu():
 
 while True:
     menu()
-    op = input('Qual sua acao?')
+    op = input('Qual sua acao?  ')
     if op not in ['i', 'r', 's', 'f']:
         print('Acao nao existente. Favor selecionar uma valida.')
         continue
