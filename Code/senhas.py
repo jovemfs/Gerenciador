@@ -1,30 +1,30 @@
-import sqlite3  # importacao
+import sqlite3
 
 MASTER_PASSWORD = "senhateste"
 
-# verificacao de senha mestre
-senha = input('Entrar com a senha para execucao:  ')
+senha = input("Insira a senha de entrada:  ")
 if senha != MASTER_PASSWORD:
-    print('Senha incorreta. Fim da execucao do programa.')
+    print("Senha incorreta. Fim da execucao.")
     exit()
-# fim da verificacao de senha mestre
+# verificacao de senha mestre
 
-conn = sqlite3.connect('senhas.db')  # conexao com banco
+conn = sqlite3.connect('passwords.db')
+
 seguranca = """                               
                                    
-                                                          ^jEQBQDj^             
-                                                       r#@@@@@@@@@#r           
-                                                       ?@@@#x_`_v#@@@x          
-                                                       g@@@!     !@@@Q          
-                                                       Q@@@_     _@@@B          
-                                                    rgg@@@@QgggggQ@@@@ggr       
-                                                    Y@@@@@@@@@@@@@@@@@@@Y       
-                                                    Y@@@@@@@Qx^xQ@@@@@@@Y       
-                                                    Y@@@@@@@^   ~@@@@@@@Y       
-                                                    Y@@@@@@@@r r#@@@@@@@Y       
-                                                    Y@@@@@@@@c,c@@@@@@@@Y       
-                                                    Y@@@@@@@@@@@@@@@@@@@Y       
-                                                    v###################v       
+                                                      ^jEQBQDj^             
+                                                   r#@@@@@@@@@#r           
+                                                   ?@@@#x_`_v#@@@x          
+                                                   g@@@!     !@@@Q          
+                                                   Q@@@_     _@@@B          
+                                                rgg@@@@QgggggQ@@@@ggr       
+                                                Y@@@@@@@@@@@@@@@@@@@Y       
+                                                Y@@@@@@@Qx^xQ@@@@@@@Y       
+                                                Y@@@@@@@^   ~@@@@@@@Y       
+                                                Y@@@@@@@@r r#@@@@@@@Y       
+                                                Y@@@@@@@@c,c@@@@@@@@Y       
+                                                Y@@@@@@@@@@@@@@@@@@@Y       
+                                                v###################v       
                                                    
                                                                 
     """
@@ -32,43 +32,43 @@ seguranca = """
 cursor = conn.cursor()
 
 cursor.execute('''
-CREATE TABLE IF NOT EXISTS users (
+CREATE TABLE IF NOT EXISTS user (
     service TEXT NOT NULL,
     username TEXT NOT NULL,
     password TEXT NOT NULL
 );
 ''')
 # exec de tabela de usuario
-# criacao senhas.db, arquivo binario
+# criacao passwords.db, arquivo q vai funcionar como bando de dados
 
 
 def menu():
-    print('-=' * 15)
+    print("-="*55)
     print(seguranca)
-    print('-='*15)
+    print("-="*55)
     print(' Selecione uma acao:')
-    print('-='*15)
+    print("-="*55)
     print(' i - inserir nova senha')
     print(' r - recuperar senha')
     print(' l - servicos salvos')
     print(' s - finalizar programa')
-    print('-='*15)
+    print("-="*55)
 # terminal com as funcoes disponiveis p exec
 
 
 def get_password(service):
     cursor.execute(f'''
-        SELECT username, senha FROM users
+        SELECT (username, password) FROM users
         WHERE service = '{service}'
     ''')
 
     if cursor.rowcount == 0:
-        print("Voce nao cadastrou esse servico (use 's' para verificar servicos")
+        print("Voce nao cadastrou o servico (digite 'i' para ver a lista)")
     else:
         for user in cursor.fetchall():
-            print(user)
+            print(service)
 
-# inserir senha
+
 def insert_password(service, username, password):
     cursor.execute(f'''
         INSERT INTO users (service, username, password)
@@ -77,7 +77,7 @@ def insert_password(service, username, password):
     conn.commit()
 # inserir senha
 
-# mostrar servicos
+
 def show_services():
     cursor.execute('''
         SELECT service FROM users;
@@ -89,16 +89,16 @@ def show_services():
 
 while True:
     menu()
-    op = input('Qual sua acao?  ')
+    op = input("Qual acao deseja realizar?  ")
     if op not in ['l', 'i', 'r', 's']:
-        print('Acao nao existente. Favor selecionar uma valida.')
+        print("Acao nao existente. Favor selecionar uma valida.")
         continue
 
     if op == 's':
         break
 
     if op == 'i':
-        service = input('Nome do servico:  ')
+        service = input('Servico:  ')
         username = input('Nome de usuario:  ')
         password = input('Senha:  ')
         insert_password(service, username, password)

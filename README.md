@@ -1,6 +1,6 @@
 # Gerenciador TESTE
 
-<img src="https://user-images.githubusercontent.com/59957939/165526318-3aac8d85-070e-492d-b6cf-ce26772ceca9.png">
+<img src="https://user-images.githubusercontent.com/59957939/165537845-1fbf6118-d36a-4be9-bc99-77b9b15d0ffb.png">
 
  Gerenciador de senhas com Python <strong>não-seguro e sem criptografia</strong>, apenas para estudo de funcionalidades durante a exec. Demonstração de armazenamento através de importação do sqlite3 como banco de dados, ao invés da criação de um servidor para isso.
 
