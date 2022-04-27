@@ -4,7 +4,7 @@
 
  Gerenciador de senhas com Python <strong>não-seguro e sem criptografia</strong>, apenas para estudo de funcionalidades durante a exec. Demonstração de armazenamento através de importação do sqlite3 como banco de dados, ao invés da criação de um servidor para isso.
 
- # Refs:
+ # Refs
  Referências retiradas de artigos encontrados no site <a href="https://app.daily.dev/">daily.dev</a>, plataforma que reúne textos sobre diversas áreas da programação e tech.
  - https://pythonawesome.com/an-extensive-password-manager-built-using-python/
  - https://pythonawesome.com/a-simple-terminal-password-manager-in-python/
