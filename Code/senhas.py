@@ -17,14 +17,28 @@ CREATE TABLE IF NOT EXISTS users (
 # criacao senhas.db, arquivo binario
 
 def menu():
-    print('-='*12)
+    print('''                      
+           ^jEQBQDj^             
+          #@@@@@@@@@#           
+        ?@@@#x_`_v#@@@x          
+        g@@@!     !@@@Q          
+        Q@@@_     _@@@B          
+     rgg@@@@QgggggQ@@@@ggr       
+     Y@@@@@@@@@@@@@@@@@@@Y       
+     Y@@@@@@@Qx^xQ@@@@@@@Y       
+     Y@@@@@@@^   ~@@@@@@@Y       
+     Y@@@@@@@@r r#@@@@@@@Y       
+     Y@@@@@@@@c,c@@@@@@@@Y       
+     Y@@@@@@@@@@@@@@@@@@@Y       
+     v###################v       ''')
+    print('-='*15)
     print(' Selecione uma acao:')
-    print('-='*12)
+    print('-='*15)
     print(' i - inserir nova senha')
     print(' r - recuperar senha')
     print(' s - servicos salvos')
     print(' f - finalizar programa')
-    print('-='*12)
+    print('-='*15)
 # terminal com as funcoes disponiveis p exec
 
 while True:
